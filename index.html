@@ -13,9 +13,83 @@
     </head>
 
     <body>
+        <!-- ****************************** Preloader ************************** -->
+        <div id="preloader"></div>
+
+        <!-- ****************************** Logo ************************** -->
         <div>
             <img class="image" src="img/GL_Lending_Logo.png">
         </div>
-    <h1>Work in Progress - Please be Patient</h1>
+        
+        <!-- ****************************** Calculator Tabs ************************** -->
+        <!-- Tab Buttons -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'scheduleC')">
+                Schedule C
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'partnership')">
+                Partnership 1065
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'scorp')">
+                S Corp 1120S
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'corp')">
+                Corporation 1120
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'variable')">
+                Variable Income
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'rental')">
+                Rental Income
+            </button>
+
+            <button class="tab-button" onclick="openTab(event, 'ssi')">
+                SSI Gross Up
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="scheduleC" class="tab-content active-content">
+            <h2>Schedule C</h2>
+            <p>This is Schedule C content.</p>
+        </div>
+
+        <div id="partnership" class="tab-content">
+            <h2>Partnership 1065</h2>
+            <p>This is Partnership content.</p>
+        </div>
+
+        <div id="scorp" class="tab-content">
+            <h2>S Corp 1120S</h2>
+            <p>This is S Corp content.</p>
+        </div>
+
+        <div id="corp" class="tab-content">
+            <h2>Corporation 1120</h2>
+            <p>This is Corporation content.</p>
+        </div>
+
+        <div id="variable" class="tab-content">
+            <h2>Variable Income</h2>
+            <p>This is Variable Income content.</p>
+        </div>
+
+        <div id="rental" class="tab-content">
+            <h2>Rental Income</h2>
+            <p>This is Rental Income content.</p>
+        </div>
+
+        <div id="ssi" class="tab-content">
+            <h2>SSI Gross Up</h2>
+            <p>This is SSI content.</p>
+        </div>
+        
+
+        <script src="script.js"></script>
     </body>
 </html>
