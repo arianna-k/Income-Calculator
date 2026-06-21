@@ -1,10 +1,93 @@
+/* ///////////////////////////////////////////////////////////////////// 
+//  Preloader and Logo
+///////////////////////////////////////////////////////////////////// */
+#preloader {
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:99999999999;
+    width:100%;
+    height:100%;
+    overflow:visible;
+    background: #fff url('../img/preloader.gif') no-repeat center center;
+}
+
 .image{
     display: block;
     margin: auto;
+    width: 300px;
 }
 
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  Text Options
+///////////////////////////////////////////////////////////////////// */
 h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400; /* Bebas Neue regular defaults to 400 */
-  color: #000021;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400; /* Bebas Neue regular defaults to 400 */
+    font-size: 35px;
+    color: #000021;
+}
+
+p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400; /* Bebas Neue regular defaults to 400 */
+    font-size: 20px;
+    color: #000021;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  Tabs for Calculators
+///////////////////////////////////////////////////////////////////// */
+/* Tabs Container */
+.tabs {
+    display: flex;
+    border: 2px solid #E38512;
+    border-radius: 10px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+/* Buttons */
+.tab-button {
+    background: #FAF4F2;
+    border: none;
+    border-right: 2px solid #E38512;
+    padding: 20px 30px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000021;
+    transition: 0.3s;
+}
+
+/* Remove last divider */
+.tab-button:last-child {
+    border-right: none;
+}
+
+/* Active Tab */
+.tab-button.active {
+    background-color: #E38512;
+    color: #FAF4F2;
+}
+
+/* Hover */
+.tab-button:hover {
+    background-color: #FAF4F2;
+}
+
+/* Content Areas */
+.tab-content {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #FAF4F2;
+}
+
+/* Visible Content */
+.active-content {
+    display: block;
 }
