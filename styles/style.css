@@ -42,19 +42,19 @@ p {
 ///////////////////////////////////////////////////////////////////// */
 /* Tabs Container */
 .tabs {
-    display: flex;
-    justify-content: center;
+    display: flex;    
     border: 2px solid #E38512;
     border-radius: 10px;
     overflow: hidden;
     width: fit-content;
+    margin: 0 auto;
 }
 
 /* Buttons */
 .tab-button {
     background: #FAF4F2;
     border: none;
-    border-right: 2px solid #E38512;
+    /*border-right: 2px solid #E38512;*/
     padding: 20px 30px;
     cursor: pointer;
     font-family: 'Bebas Neue', sans-serif;
@@ -86,6 +86,8 @@ p {
     margin-top: 25px;
     padding: 20px;
     border: 1px solid #FAF4F2;
+    border-radius: 10px;
+    background-color: #FAF4F2;
 }
 
 /* Visible Content */
