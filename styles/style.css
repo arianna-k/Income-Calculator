@@ -15,7 +15,7 @@
 .image{
     display: block;
     margin: auto;
-    width: 300px;
+    width: 500px;
 }
 
 
@@ -59,7 +59,7 @@ p {
     cursor: pointer;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 30px;
     color: #000021;
     transition: 0.3s;
 }
@@ -83,9 +83,9 @@ p {
 /* Content Areas */
 .tab-content {
     display: none;
-    margin-top: 25px;
+    margin: 20px 50px;
     padding: 20px;
-    border: 1px solid #FAF4F2;
+    border: 1px solid #E38512;
     border-radius: 10px;
     background-color: #FAF4F2;
 }
