@@ -42,7 +42,8 @@ p {
 ///////////////////////////////////////////////////////////////////// */
 /* Tabs Container */
 .tabs {
-    display: block;
+    display: flex;
+    justify-content: center;
     border: 2px solid #E38512;
     border-radius: 10px;
     overflow: hidden;
