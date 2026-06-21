@@ -42,7 +42,7 @@ p {
 ///////////////////////////////////////////////////////////////////// */
 /* Tabs Container */
 .tabs {
-    display: flex;
+    display: block;
     border: 2px solid #E38512;
     border-radius: 10px;
     overflow: hidden;
@@ -76,7 +76,7 @@ p {
 
 /* Hover */
 .tab-button:hover {
-    background-color: #FAF4F2;
+    background-color: #E38512;
 }
 
 /* Content Areas */
