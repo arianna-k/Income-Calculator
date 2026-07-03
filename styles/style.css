@@ -1,3 +1,4 @@
+
 /* ///////////////////////////////////////////////////////////////////// 
 //  Preloader and Logo
 ///////////////////////////////////////////////////////////////////// */
@@ -25,7 +26,7 @@
 h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400; /* Bebas Neue regular defaults to 400 */
-    font-size: 35px;
+    font-size: 42px;
     color: #000021;
 }
 
@@ -94,3 +95,149 @@ p {
 .active-content {
     display: block;
 }
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  Calculator Class
+///////////////////////////////////////////////////////////////////// */
+.calculator-card {
+    background: #FAF4F2;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.calculator-title {
+    color: #E38512;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    border-bottom: 3px solid #E38512;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.calculator-subtitle {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Dropdown Questions  */
+.question-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+}
+
+.question-row select{
+    width:220px;
+    padding:10px;
+    font-size:16px;
+}
+
+/* Calculator Columns */
+.calculator-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.calculator-column{
+    flex:1;
+}
+
+.section-title{
+    color:#E38512;
+    font-size:28px;
+    border-bottom:2px solid #E38512;
+    padding-bottom:6px;
+    margin-bottom:25px;
+}
+
+/* Inputs */
+.input-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.input-row label{
+    width:55%;
+}
+
+.input-row input{
+    width:180px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+/* Results */
+/* Container holding both monthly boxes */
+.result-row {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Individual result box */
+.result-box {
+    flex: 1;
+
+    background: #FFFFFF;
+
+    border-radius: 12px;
+
+    padding: 20px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+/* Bottom total box */
+.total-box {
+
+    margin-top: 30px;
+
+    background: #FFFFFF;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+/* Blue text */
+.result-label {
+
+    color: #000021;
+
+    font-size: 24px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    letter-spacing: 1px;
+}
+
+/* Orange dollar amount */
+.result-value {
+
+    color: #E38512;
+
+    font-size: 38px;
+
+    font-weight: bold;
+}
+
