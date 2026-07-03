@@ -72,7 +72,7 @@
                         Is the borrower qualifying with one or two years of returns?
                     </label>
 
-                    <select id="years" onchange="toggleYears()">
+                    <select class="years-select" onchange="toggleYears(this)">
                         <option value="0" selected>Select</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -86,7 +86,7 @@
 
                 <div class="calculator-columns" id="calculatorColumns">
                     
-                    <div class="calculator-column" id="year1Column">
+                    <div class="calculator-column year1Column" id="year1Column">
                         <h2 class="section-title">
                             Returns from Last Year
                         </h2>
@@ -155,7 +155,7 @@
                         </div>
                     </div>
 
-                    <div class="calculator-column" id="year2Column">
+                    <div class="calculator-column year2Column" id="year2Column">
                         <h2 class="section-title">
                             Returns from 2 Years Ago
                         </h2>
@@ -237,8 +237,67 @@
         </div>
 
         <div id="partnership" class="tab-content">
-            <h2>Partnership 1065</h2>
-            <p>This is Partnership content.</p>
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    Self-Employed Partnership 1065 Borrower
+                </h1>
+                
+                <p class="calculator-subtitle">
+                    For borrowers that claim self-employment income on Form 1065.
+                </p>
+                
+                <div class="question-row">
+
+                    <label>
+                        Is the borrower qualifying with one or two years of returns?
+                    </label>
+
+                    <select class="years-select" onchange="toggleYears(this)">
+                        <option value="0" selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                    </select>
+
+                </div>
+
+                <p id="selectMessage" class="select-message">
+                    Please select whether the borrower is qualifying with one or two years of returns.
+                </p>
+
+                <div class="calculator-columns" id="calculatorColumns">
+                    
+                    <div class="calculator-column year1Column" id="year1Column">
+                        <h2 class="section-title">
+                            Returns from Last Year
+                        </h2>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="monthlyIncome1">$0.00</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="calculator-column year2Column" id="year2Column">
+                        <h2 class="section-title">
+                            Returns from 2 Years Ago
+                        </h2>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="monthlyIncome2">$0.00</span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+            </div>
         </div>
 
         <div id="scorp" class="tab-content">

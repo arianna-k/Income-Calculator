@@ -28,15 +28,16 @@ function openTab(event, tabId) {
     event.currentTarget.classList.add("active");
 }
 
-function toggleYears() {
+function toggleYears(select) {
+    const calculator = select.closest(".calculator");
 
-    const years = document.getElementById("years").value;
+    // const years = document.getElementById("years").value;
 
-    const message = document.getElementById("selectMessage");
-    const year1 = document.getElementById("year1Column");
-    const year2 = document.getElementById("year2Column");
+    const message = calculator.querySelector(".select-message");
+    const year1 = calculator.querySelector(".year1-column");
+    const year2 = calculator.querySelector(".year2-column");
 
-    if (years === "0") {
+    if (select.value === "0") {
 
         message.style.display = "block";
 
@@ -44,7 +45,7 @@ function toggleYears() {
         year2.style.display = "none";
 
     }
-    else if (years === "1") {
+    else if (select.value === "1") {
 
         message.style.display = "none";
 
@@ -64,5 +65,9 @@ function toggleYears() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    toggleYears();
+
+    document.querySelectorAll(".years-select").forEach(select => {
+        toggleYears(select);
+    });
+
 });
