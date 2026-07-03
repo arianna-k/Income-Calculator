@@ -6,9 +6,9 @@ window.addEventListener('load', function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    toggleYears();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     toggleYears();
+// });
 
 // Function to open a specific tab
 function openTab(event, tabId) {
