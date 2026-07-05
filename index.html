@@ -149,7 +149,7 @@
 
                             <div class="result-box">
                                 <span class="result-label">Monthly Income:</span>
-                                <span class="result-value" id="monthlyIncome1">$0.00</span>
+                                <span class="result-value" id="ScheduleCmonthlyIncome1">$0.00</span>
                             </div>
 
                         </div>
@@ -212,7 +212,7 @@
 
                             <div class="result-box">
                                 <span class="result-label">Monthly Income:</span>
-                                <span class="result-value" id="monthlyIncome2">$0.00</span>
+                                <span class="result-value" id="ScheduleCmonthlyIncome2">$0.00</span>
                             </div>
                             
                         </div>
@@ -227,7 +227,7 @@
                         24 Months Average:
                     </span>
 
-                    <span class="result-value" id="average24Months">
+                    <span class="result-value" id="ScheduleCaverage24Months">
                         $0.00
                     </span>
 
@@ -261,6 +261,20 @@
 
                 </div>
 
+                <div class="question-row">
+
+                    <label>
+                        Is the borrower able to prove liquidity?
+                    </label>
+
+                    <select class="liquidity-select" onchange="toggleLiquidity(this)">
+                        <option value="0" selected>Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                </div>
+
                 <p id="selectMessage" class="select-message">
                     Please select whether the borrower is qualifying with one or two years of returns.
                 </p>
@@ -272,11 +286,131 @@
                             Returns from Last Year
                         </h2>
 
+                        <div class="input-row">
+                            <label for="W2Income1">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="W2Income1"
+                                name="W2Income1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Ownership1">Percentage of Ownership (K1 J):</label>
+                            <input
+                                type="number"
+                                id="Ownership1"
+                                name="Ownership1"
+                                placeholder="%"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="K1Income1">K-1 Income (1-3):</label>
+                            <input
+                                type="number"
+                                id="K1Income1"
+                                name="K1Income1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Distributions1">Distributions (K1 Box 19):</label>
+                            <input
+                                type="number"
+                                id="Distributions1"
+                                name="Distributions1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Guarantee1">Guaranteed Payments* (K1 Box 4):</label>
+                            <input
+                                type="number"
+                                id="Guarantee1"
+                                name="Guarantee1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="OtherIncome1">Other Ordinary Income (Line 4):</label>
+                            <input
+                                type="number"
+                                id="OtherIncome1"
+                                name="OtherIncome1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Nonrecurring1">Nonrecurring Other Income (Line 7):</label>
+                            <input
+                                type="number"
+                                id="Nonrecurring1"
+                                name="Nonrecurring1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Depreciation1">Depreciation (Line 16c):</label>
+                            <input
+                                type="number"
+                                id="Depreciation1"
+                                name="Depreciation1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Depletion1">Depletion (Line 17):</label>
+                            <input
+                                type="number"
+                                id="Depletion1"
+                                name="Depletion1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="Mortgages1">Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                            <input
+                                type="number"
+                                id="Mortgages1"
+                                name="Mortgages1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Travel1">Travel and Entertainment (M1 Line 4b):</label>
+                            <input
+                                type="number"
+                                id="Travel1"
+                                name="Travel1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="Amortization1">Amortization:</label>
+                            <input
+                                type="number"
+                                id="Amortization1"
+                                name="Amortization1"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
                         <div class="result-row">
 
                             <div class="result-box">
                                 <span class="result-label">Monthly Income:</span>
-                                <span class="result-value" id="monthlyIncome1">$0.00</span>
+                                <span class="result-value" id="PartnershipmonthlyIncome1">$0.00</span>
                             </div>
 
                         </div>
@@ -287,6 +421,714 @@
                             Returns from 2 Years Ago
                         </h2>
 
+                        <div class="input-row">
+                            <label for="W2Income2">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="W2Income2"
+                                name="W2Income2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Ownership2">Percentage of Ownership (K1 J):</label>
+                            <input
+                                type="number"
+                                id="Ownership2"
+                                name="Ownership2"
+                                placeholder="%"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="K1Income2">K-1 Income (1-3):</label>
+                            <input
+                                type="number"
+                                id="K1Income2"
+                                name="K1Income2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Distributions2">Distributions (K1 Box 19):</label>
+                            <input
+                                type="number"
+                                id="Distributions2"
+                                name="Distributions2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Guarantee2">Guaranteed Payments* (K1 Box 4):</label>
+                            <input
+                                type="number"
+                                id="Guarantee2"
+                                name="Guarantee2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="OtherIncome2">Other Ordinary Income (Line 4):</label>
+                            <input
+                                type="number"
+                                id="OtherIncome2"
+                                name="OtherIncome2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Nonrecurring2">Nonrecurring Other Income (Line 7):</label>
+                            <input
+                                type="number"
+                                id="Nonrecurring2"
+                                name="Nonrecurring2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Depreciation2">Depreciation (Line 16c):</label>
+                            <input
+                                type="number"
+                                id="Depreciation2"
+                                name="Depreciation2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Depletion2">Depletion (Line 17):</label>
+                            <input
+                                type="number"
+                                id="Depletion2"
+                                name="Depletion2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="Mortgages2">Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                            <input
+                                type="number"
+                                id="Mortgages2"
+                                name="Mortgages2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="Travel2">Travel and Entertainment (M1 Line 4b):</label>
+                            <input
+                                type="number"
+                                id="Travel2"
+                                name="Travel2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="Amortization2">Amortization:</label>
+                            <input
+                                type="number"
+                                id="Amortization2"
+                                name="Amortization2"
+                                placeholder="$"
+                                oninput="calculatePartnership()">
+                        </div>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="PartnershipmonthlyIncome2">$0.00</span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="total-box">
+
+                    <span class="result-label">
+                        24 Months Average:
+                    </span>
+
+                    <span class="result-value" id="Partnershipaverage24Months">
+                        $0.00
+                    </span>
+
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="scorp" class="tab-content">
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    Self-Employed S Corp 1120S Borrower
+                </h1>
+
+                <p class="calculator-subtitle">
+                    For borrowers that claim self-employment income on Form 1120S.
+                </p>
+            
+                <div class="question-row">
+
+                    <label>
+                        Is the borrower qualifying with one or two years of returns?
+                    </label>
+
+                    <select class="years-select" onchange="toggleYears(this)">
+                        <option value="0" selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                    </select>
+
+                </div>
+
+                <div class="question-row">
+
+                    <label>
+                        Is the borrower able to prove liquidity?
+                    </label>
+
+                    <select class="liquidity-select" onchange="toggleLiquidity(this)">
+                        <option value="0" selected>Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                </div>
+
+                <p id="selectMessage" class="select-message">
+                    Please select whether the borrower is qualifying with one or two years of returns.
+                </p>
+
+                <div class="calculator-columns" id="calculatorColumns">
+                    
+                    <div class="calculator-column year1Column" id="year1Column">
+                        <h2 class="section-title">
+                            Returns from Last Year
+                        </h2>
+
+                        <div class="input-row">
+                            <label for="SCorpW2Income1">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="SCorpW2Income1"
+                                name="SCorpW2Income1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpOwnership1">Percentage of Ownership (K1 J):</label>
+                            <input
+                                type="number"
+                                id="SCorpOwnership1"
+                                name="SCorpOwnership1"
+                                placeholder="%"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpK1Income1">K-1 Income (1-3):</label>
+                            <input
+                                type="number"
+                                id="SCorpK1Income1"
+                                name="SCorpK1Income1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDistributions1">Distributions (K1 Box 19):</label>
+                            <input
+                                type="number"
+                                id="SCorpDistributions1"
+                                name="SCorpDistributions1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpNonrecurring1">Nonrecurring Other Income (Line 7):</label>
+                            <input
+                                type="number"
+                                id="SCorpNonrecurring1"
+                                name="SCorpNonrecurring1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDepreciation1">Depreciation (Line 16c):</label>
+                            <input
+                                type="number"
+                                id="SCorpDepreciation1"
+                                name="SCorpDepreciation1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDepletion1">Depletion (Line 17):</label>
+                            <input
+                                type="number"
+                                id="SCorpDepletion1"
+                                name="SCorpDepletion1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="SCorpMortgages1">Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                            <input
+                                type="number"
+                                id="SCorpMortgages1"
+                                name="SCorpMortgages1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpTravel1">Travel and Entertainment (M1 Line 4b):</label>
+                            <input
+                                type="number"
+                                id="SCorpTravel1"
+                                name="SCorpTravel1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="SCorpAmortization1">Amortization:</label>
+                            <input
+                                type="number"
+                                id="SCorpAmortization1"
+                                name="SCorpAmortization1"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="SCorpmonthlyIncome1">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-column year2Column" id="year2Column">
+                        <h2 class="section-title">
+                            Returns from 2 Years Ago
+                        </h2>
+
+                        <div class="input-row">
+                            <label for="SCorpW2Income2">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="SCorpW2Income2"
+                                name="SCorpW2Income2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpOwnership2">Percentage of Ownership (K1 J):</label>
+                            <input
+                                type="number"
+                                id="SCorpOwnership2"
+                                name="SCorpOwnership2"
+                                placeholder="%"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpK1Income2">K-1 Income (1-3):</label>
+                            <input
+                                type="number"
+                                id="SCorpK1Income2"
+                                name="SCorpK1Income2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDistributions2">Distributions (K1 Box 19):</label>
+                            <input
+                                type="number"
+                                id="SCorpDistributions2"
+                                name="SCorpDistributions2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpNonrecurring2">Nonrecurring Other Income (Line 7):</label>
+                            <input
+                                type="number"
+                                id="SCorpNonrecurring2"
+                                name="SCorpNonrecurring2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDepreciation2">Depreciation (Line 16c):</label>
+                            <input
+                                type="number"
+                                id="SCorpDepreciation2"
+                                name="SCorpDepreciation2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpDepletion2">Depletion (Line 17):</label>
+                            <input
+                                type="number"
+                                id="SCorpDepletion2"
+                                name="SCorpDepletion2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="SCorpMortgages2">Mortgages, Notes, Bonds < 1 Year (L Line 16):</label>
+                            <input
+                                type="number"
+                                id="SCorpMortgages2"
+                                name="SCorpMortgages2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="SCorpTravel2">Travel and Entertainment (M1 Line 4b):</label>
+                            <input
+                                type="number"
+                                id="SCorpTravel2"
+                                name="SCorpTravel2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="SCorpAmortization2">Amortization:</label>
+                            <input
+                                type="number"
+                                id="SCorpAmortization2"
+                                name="SCorpAmortization2"
+                                placeholder="$"
+                                oninput="calculateSCorp()">
+                        </div>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="SCorpmonthlyIncome2">$0.00</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="total-box">
+
+                    <span class="result-label">
+                        24 Months Average:
+                    </span>
+
+                    <span class="result-value" id="SCorpaverage24Months">
+                        $0.00
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="corp" class="tab-content">
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    Self-Employed Corporation 1120 Borrower
+                </h1>
+
+                <p class="calculator-subtitle">
+                    For borrowers that claim self-employment income on Form 1120.
+                </p>
+            
+                <div class="question-row">
+
+                    <label>
+                        Is the borrower qualifying with one or two years of returns?
+                    </label>
+
+                    <select class="years-select" onchange="toggleYears(this)">
+                        <option value="0" selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                    </select>
+
+                </div>
+
+                <p id="selectMessage" class="select-message">
+                    Please select whether the borrower is qualifying with one or two years of returns.
+                </p>
+
+                <div class="calculator-columns" id="calculatorColumns">
+                    
+                    <div class="calculator-column year1Column" id="year1Column">
+                        <h2 class="section-title">
+                            Returns from Last Year
+                        </h2>
+
+                        <div class="input-row">
+                            <label for="CorpW2Income1">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="CorpW2Income1"
+                                name="CorpW2Income1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpOwnership1">Percentage of Ownership:</label>
+                            <input
+                                type="number"
+                                id="CorpOwnership1"
+                                name="CorpOwnership1"
+                                placeholder="%"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpNonrecurring1">Nonrecurring Gains (Lines 8 & 9):</label>
+                            <input
+                                type="number"
+                                id="CorpNonrecurring1"
+                                name="CorpNonrecurring1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+                        
+                        <div class="input-row">
+                            <label for="CorpDepreciation1">Depreciation (Line 20):</label>
+                            <input
+                                type="number"
+                                id="CorpDepreciation1"
+                                name="CorpDepreciation1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                         <div class="input-row">
+                            <label for="CorpDepletion1">Depletion (Line 21):</label>
+                            <input
+                                type="number"
+                                id="CorpDepletion1"
+                                name="CorpDepletion1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpNOL1">Net Operating Loss (Line 29a):</label>
+                            <input
+                                type="number"
+                                id="CorpNOL1"
+                                name="CorpNOL1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTaxable1">Taxable Income (Line 30):</label>
+                            <input
+                                type="number"
+                                id="CorpTaxable1"
+                                name="CorpTaxable1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTax1">Total Tax (Line 31):</label>
+                            <input
+                                type="number"
+                                id="CorpTax1"
+                                name="CorpTax1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpMortgages1">Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                            <input
+                                type="number"
+                                id="CorpMortgages1"
+                                name="CorpMortgages1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTravel1">Travel and Entertainment (M1 Line 5c):</label>
+                            <input
+                                type="number"
+                                id="CorpTravel1"
+                                name="CorpTravel1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpAmortization1">Amortization:</label>
+                            <input
+                                type="number"
+                                id="CorpAmortization1"
+                                name="CorpAmortization1"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="result-row">
+
+                            <div class="result-box">
+                                <span class="result-label">Monthly Income:</span>
+                                <span class="result-value" id="monthlyIncome1">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-column year2Column" id="year2Column">
+                        <h2 class="section-title">
+                            Returns from 2 Years Ago
+                        </h2>
+
+                        <div class="input-row">
+                            <label for="CorpW2Income2">W2 Income (Box 5):</label>
+                            <input
+                                type="number"
+                                id="CorpW2Income2"
+                                name="CorpW2Income2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpOwnership2">Percentage of Ownership:</label>
+                            <input
+                                type="number"
+                                id="CorpOwnership2"
+                                name="CorpOwnership2"
+                                placeholder="%"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpNonrecurring2">Nonrecurring Gains (Lines 8 & 9):</label>
+                            <input
+                                type="number"
+                                id="CorpNonrecurring2"
+                                name="CorpNonrecurring2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpDepreciation2">Depreciation (Line 20):</label>
+                            <input
+                                type="number"
+                                id="CorpDepreciation2"
+                                name="CorpDepreciation2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpDepletion2">Depletion (Line 21):</label>
+                            <input
+                                type="number"
+                                id="CorpDepletion2"
+                                name="CorpDepletion2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpNOL2">Net Operating Loss (Line 29a):</label>
+                            <input
+                                type="number"
+                                id="CorpNOL2"
+                                name="CorpNOL2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTaxable2">Taxable Income (Line 30):</label>
+                            <input
+                                type="number"
+                                id="CorpTaxable2"
+                                name="CorpTaxable2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTax2">Total Tax (Line 31):</label>
+                            <input
+                                type="number"
+                                id="CorpTax2"
+                                name="CorpTax2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpMortgages2">Mortgages, Notes, Bonds < 1 Year (L Line 17):</label>
+                            <input
+                                type="number"
+                                id="CorpMortgages2"
+                                name="CorpMortgages2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
+                        <div class="input-row">
+                            <label for="CorpTravel2">Travel and Entertainment (M1 Line 5c):</label>
+                            <input
+                                type="number"
+                                id="CorpTravel2"
+                                name="CorpTravel2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div> 
+
+                        <div class="input-row">
+                            <label for="CorpAmortization2">Amortization:</label>
+                            <input
+                                type="number"
+                                id="CorpAmortization2"
+                                name="CorpAmortization2"
+                                placeholder="$"
+                                oninput="calculateCorp()">
+                        </div>
+
                         <div class="result-row">
 
                             <div class="result-box">
@@ -295,9 +1137,6 @@
                             </div>
                             
                         </div>
-
-                    </div>
-
                 </div>
 
                 <div class="total-box">
@@ -315,29 +1154,213 @@
             </div>
         </div>
 
-        <div id="scorp" class="tab-content">
-            <h2>S Corp 1120S</h2>
-            <p>This is S Corp content.</p>
-        </div>
-
-        <div id="corp" class="tab-content">
-            <h2>Corporation 1120</h2>
-            <p>This is Corporation content.</p>
-        </div>
-
         <div id="variable" class="tab-content">
-            <h2>Variable Income</h2>
-            <p>This is Variable Income content.</p>
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    Variable Income
+                </h1>
+
+                <p class="calculator-subtitle">
+                    Need help with what this is supposed to look like.
+                </p>
+            </div>
         </div>
 
         <div id="rental" class="tab-content">
-            <h2>Rental Income</h2>
-            <p>This is Rental Income content.</p>
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    Rental Income
+                </h1>
+            
+                <div class="question-row">
+
+                    <label>
+                        Does the most recent year of 1040 returns show rental income?
+                    </label>
+
+                    <select class="1040returns-select">
+                        <option value="0" selected>Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                </div>
+
+                <div class="question-row">
+
+                    <label>
+                        Are the taxes and insurance for the property escrowed?
+                    </label>
+
+                    <select class="Escrowed-select">
+                        <option value="0" selected>Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                </div>
+
+                <div class="input-row">
+                    <label for="TotalMortgage">What is the total mortgage payment including taxes and insurance?</label>
+                    <input
+                        type="number"
+                        id="TotalMortgage"
+                        name="TotalMortgage"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="TotalRents">Total Rents Received (Line 3):</label>
+                    <input
+                        type="number"
+                        id="TotalRents"
+                        name="TotalRents"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Insurance">Insurance (Line 9):</label>
+                    <input
+                        type="number"
+                        id="Insurance"
+                        name="Insurance"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Interest">Mortgage Interest Paid (Line 12):</label>
+                    <input
+                        type="number"
+                        id="Interest"
+                        name="Interest"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Taxes">Taxes (Line 16):</label>
+                    <input
+                        type="number"
+                        id="Taxes"
+                        name="Taxes"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Depreciation">Depreciation/Depletion (Line 18):</label>
+                    <input
+                        type="number"
+                        id="Depreciation"
+                        name="Depreciation"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="HOA">HOA Dues (Yearly):</label>
+                    <input
+                        type="number"
+                        id="HOA"
+                        name="HOA"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Extraordinary">One Time Extraordinary Expense:</label>
+                    <input
+                        type="number"
+                        id="Extraordinary"
+                        name="Extraordinary"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="input-row">
+                    <label for="Expenses">Total Expenses:</label>
+                    <input
+                        type="number"
+                        id="Expenses"
+                        name="Expenses"
+                        placeholder="$"
+                        oninput="calculateRental()">
+                </div>
+
+                <div class="total-box">
+
+                    <span class="result-label">
+                        Monthly Income:
+                    </span>
+
+                    <span class="result-value" id="monthlyIncome">
+                        $0.00
+                    </span>
+
+                </div>
+                
+            </div>
         </div>
 
         <div id="ssi" class="tab-content">
-            <h2>SSI Gross Up</h2>
-            <p>This is SSI content.</p>
+            <div class="calculator-card">
+
+                <h1 class="calculator-title">
+                    SSI Gross Up 
+                </h1>
+
+                <div class="question-row">
+
+                    <label>
+                        Are We Using a 1099 or Award Letter?
+                    </label>
+
+                    <select class="doctype-select">
+                        <option value="0" selected>Select</option>
+                        <option value="Form1099">Form 1099</option>
+                        <option value="AwardLetter">Award Letter</option>
+                    </select>
+
+                </div>
+
+                <div class="input-row">
+                    <label for="GrossPay">What is the total of Gross Pay? (Box 3 if SSI, Box 1 if Pension.)</label>
+                    <input
+                        type="number"
+                        id="GrossPay"
+                        name="GrossPay"
+                        placeholder="$"
+                        oninput="calculateSSI()">
+                </div>
+
+                <div class="input-row">
+                    <label for="6B">On your tax return, what is the total of box 6B?</label>
+                    <input
+                        type="number"
+                        id="6B"
+                        name="6B"
+                        placeholder="$"
+                        oninput="calculateSSI()">
+                </div>
+
+                <div class="total-box">
+
+                    <span class="result-label">
+                        24 Months Average:
+                    </span>
+
+                    <span class="result-value" id="average24Months">
+                        $0.00
+                    </span>
+
+                </div>
+                
+            </div>
         </div>
         
 

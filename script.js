@@ -31,8 +31,6 @@ function openTab(event, tabId) {
 function toggleYears(select) {
     const calculator = select.closest(".calculator-card");
 
-    // const years = document.getElementById("years").value;
-
     const message = calculator.querySelector(".select-message");
     const year1 = calculator.querySelector(".year1Column");
     const year2 = calculator.querySelector(".year2Column");
