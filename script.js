@@ -62,6 +62,32 @@ function toggleYears(select) {
 
 }
 
+function calculateScheduleC() {
+    let year1netprofit = Number(document.getElementById("netProfit1").value);
+    let year2netprofit = Number(document.getElementById("netProfit2").value);
+    let year1nonRecurring = Number(document.getElementById("nonRecurring1").value);
+    let year2nonRecurring = Number(document.getElementById("nonRecurring2").value);
+    let year1depletion = Number(document.getElementById("depletion1").value);
+    let year2depletion = Number(document.getElementById("depletion2").value);
+    let year1meals = Number(document.getElementById("meals1").value);
+    let year2meals = Number(document.getElementById("meals2").value);
+    let year1businessHome = Number(document.getElementById("businessHome1").value);
+    let year2businessHome = Number(document.getElementById("businessHome2").value);
+    let year1vehicleMiles = Number(document.getElementById("vehicleMiles1").value);
+    let year2vehicleMiles = Number(document.getElementById("vehicleMiles2").value);
+
+    year1Miles = year1vehicleMiles * 0.26;
+    year2Miles = year2vehicleMiles * 0.26;
+
+    let year1total = (year1netprofit - year1nonRecurring + year1depletion - year1meals + year1businessHome + year1Miles)/12;
+    let year2total = (year2netprofit - year2nonRecurring + year2depletion - year2meals + year2businessHome + year2Miles)/12;
+    let annualAverage = (year1total + year2total) / 2;
+
+    document.getElementById("ScheduleCmonthlyIncome1").value = year1total.toFixed(2);
+    document.getElementById("ScheduleCmonthlyIncome2").value = year2total.toFixed(2);
+    document.getElementById("ScheduleCannualAverage").value = annualAverage.toFixed(2);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".years-select").forEach(select => {
