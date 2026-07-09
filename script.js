@@ -87,9 +87,9 @@ function calculateScheduleC() {
     console.log("Year 2 Total: " + year2total);
     console.log("Annual Average: " + annualAverage);
 
-    document.getElementById("ScheduleCmonthlyIncome1").value = year1total.toFixed(2);
-    document.getElementById("ScheduleCmonthlyIncome2").value = year2total.toFixed(2);
-    document.getElementById("ScheduleCaverage24Months").value = annualAverage.toFixed(2);
+    document.getElementById("ScheduleCmonthlyIncome1").textContent = "$" + year1total.toFixed(2);
+    document.getElementById("ScheduleCmonthlyIncome2").textContent = "$" + year2total.toFixed(2);
+    document.getElementById("ScheduleCaverage24Months").textContent = "$" + annualAverage.toFixed(2);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
