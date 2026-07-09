@@ -85,7 +85,7 @@ function calculateScheduleC() {
 
     document.getElementById("ScheduleCmonthlyIncome1").value = year1total.toFixed(2);
     document.getElementById("ScheduleCmonthlyIncome2").value = year2total.toFixed(2);
-    document.getElementById("ScheduleCannualAverage").value = annualAverage.toFixed(2);
+    document.getElementById("ScheduleCaverage24Months").value = annualAverage.toFixed(2);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
