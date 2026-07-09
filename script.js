@@ -83,6 +83,10 @@ function calculateScheduleC() {
     let year2total = (year2netprofit - year2nonRecurring + year2depletion - year2meals + year2businessHome + year2Miles)/12;
     let annualAverage = (year1total + year2total) / 2;
 
+    console.log("Year 1 Total: " + year1total);
+    console.log("Year 2 Total: " + year2total);
+    console.log("Annual Average: " + annualAverage);
+
     document.getElementById("ScheduleCmonthlyIncome1").value = year1total.toFixed(2);
     document.getElementById("ScheduleCmonthlyIncome2").value = year2total.toFixed(2);
     document.getElementById("ScheduleCaverage24Months").value = annualAverage.toFixed(2);
