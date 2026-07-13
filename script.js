@@ -196,6 +196,43 @@ function calculateSCorp() {
     document.getElementById("SCorpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
 }
 
+function calculateCorp() {
+    let year1W2Income = Number(document.getElementById("CorpW2Income1").value); //1
+    let year2W2Income = Number(document.getElementById("CorpW2Income2").value);
+    let year1Ownership = Number(document.getElementById("CorpOwnership1").value); //2
+    let year1OwnershipPercentage = year1Ownership / 100;
+    let year2Ownership = Number(document.getElementById("CorpOwnership2").value);
+    let year2OwnershipPercentage = year2Ownership / 100;
+    let year1Nonrecurring = Number(document.getElementById("CorpNonrecurring1").value); //3
+    let year2Nonrecurring = Number(document.getElementById("CorpNonrecurring2").value);
+    let year1NonrecurringOther = Number(document.getElementById("CorpNonrecurringOther1").value); //4
+    let year2NonrecurringOther = Number(document.getElementById("CorpNonrecurringOther2").value);
+    let year1Depreciation = Number(document.getElementById("CorpDepreciation1").value); //5
+    let year2Depreciation = Number(document.getElementById("CorpDepreciation2").value);
+    let year1Depletion = Number(document.getElementById("CorpDepletion1").value); //6
+    let year2Depletion = Number(document.getElementById("CorpDepletion2").value);
+    let year1NetOperatingLoss = Number(document.getElementById("CorpNOL1").value); //7
+    let year2NetOperatingLoss = Number(document.getElementById("CorpNOL2").value);
+    let year1Taxable = Number(document.getElementById("CorpTaxable1").value); //8
+    let year2Taxable = Number(document.getElementById("CorpTaxable2").value);
+    let year1Taxes = Number(document.getElementById("CorpTax1").value); //9
+    let year2Taxes = Number(document.getElementById("CorpTax2").value);
+    let year1Mortgages = Number(document.getElementById("CorpMortgages1").value); //10
+    let year2Mortgages = Number(document.getElementById("CorpMortgages2").value);
+    let year1Travel = Number(document.getElementById("CorpTravel1").value); //11
+    let year2Travel = Number(document.getElementById("CorpTravel2").value);
+    let year1Amortization = Number(document.getElementById("CorpAmortization1").value); //12
+    let year2Amortization = Number(document.getElementById("CorpAmortization2").value);
+
+    let monthlyIncome1 = ((((year1Depreciation - year1Nonrecurring - year1NonrecurringOther + year1Depletion + year1NetOperatingLoss + year1Taxable - year1Taxes - year1Mortgages - year1Travel - year1Amortization) * year1OwnershipPercentage) + year1W2Income) / 12);
+    let monthlyIncome2 = ((((year2Depreciation - year2Nonrecurring - year2NonrecurringOther + year2Depletion + year2NetOperatingLoss + year2Taxable - year2Taxes - year2Mortgages - year2Travel - year2Amortization) * year2OwnershipPercentage) + year2W2Income) / 12);
+
+    let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
+
+    document.getElementById("CorpmonthlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
+    document.getElementById("CorpmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
+    document.getElementById("Corpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
+}
 document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".years-select").forEach(select => {
