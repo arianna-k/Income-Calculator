@@ -191,8 +191,8 @@ function calculateSCorp() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("SCorpmontlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
-    document.getElementById("SCorpmontlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
+    document.getElementById("SCorpmonthlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
+    document.getElementById("SCorpmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
     document.getElementById("SCorpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
 }
 
