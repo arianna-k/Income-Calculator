@@ -234,7 +234,25 @@ function calculateCorp() {
     document.getElementById("Corpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
 }
 
+function calculateRental() {
+    let escrowedSelect = document.getElementById("rentalEscrowedSelect");
+    let escrowedValue = escrowedSelect.value;
+    let mortgage = Number(document.getElementById("TotalMortgage").value);
+    let rents = Number(document.getElementById("TotalRents").value);
+    let insurance = Number(document.getElementById("Insurance").value);
+    let interest = Number(document.getElementById("Interest").value);
+    let depreciation = Number(document.getElementById("Depreciation").value);
+    let HOA = Number(document.getElementById("HOA").value);
+    let onetimeexpense = Number(document.getElementById("Extraordinary").value);
+    let expenses = Number(document.getElementById("Expenses").value);
 
+    if (escrowedValue === "Yes") {
+        let monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
+    } else {
+        let monthlyIncome = ((rents - insurance - interest - depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
+    }
+    document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
