@@ -245,11 +245,12 @@ function calculateRental() {
     let HOA = Number(document.getElementById("HOA").value);
     let onetimeexpense = Number(document.getElementById("Extraordinary").value);
     let expenses = Number(document.getElementById("Expenses").value);
-
+    
+    let monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
     if (escrowedValue === "Yes") {
-        let monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
+        monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
     } else {
-        let monthlyIncome = ((rents - insurance - interest - depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
+        monthlyIncome = ((rents - insurance - interest - depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
     }
     document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
 }
