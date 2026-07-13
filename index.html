@@ -1347,7 +1347,7 @@
                         Are We Using a 1099 or Award Letter?
                     </label>
 
-                    <select class="doctype-select">
+                    <select class="doctype-select" id="ssiTypeSelect" onchange="calculateSSI()">
                         <option value="0" selected>Select</option>
                         <option value="Form1099">Form 1099</option>
                         <option value="AwardLetter">Award Letter</option>
@@ -1375,16 +1375,27 @@
                         oninput="calculateSSI()">
                 </div>
 
-                <div class="total-box">
+                <div class="calculator-columns" id="calculatorColumns">
+                    
+                    <div class="calculator-column year1Column" id="year1Column">
+                        <div class="result-row">
 
-                    <span class="result-label">
-                        24 Months Average:
-                    </span>
+                            <div class="result-box">
+                                <span class="result-label">FHA Monthly Income:</span>
+                                <span class="result-value" id="FHAmonthlyIncome">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    <span class="result-value" id="average24Months">
-                        $0.00
-                    </span>
+                    <div class="calculator-column year2Column" id="year2Column">
+                        <div class="result-row">
 
+                            <div class="result-box">
+                                <span class="result-label">VA Monthly Income:</span>
+                                <span class="result-value" id="VAmonthlyIncome">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>

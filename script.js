@@ -93,8 +93,7 @@ function calculateScheduleC() {
 }
 
 function calculatePartnership() {
-    let liquiditySelect = document.getElementById("partnershipLiquiditySelect");
-    let liquidityValue = liquiditySelect.value;
+    let liquidityValue = document.getElementById("partnershipLiquiditySelect").value;
     let year1W2Income = Number(document.getElementById("W2Income1").value); 
     let year2W2Income = Number(document.getElementById("W2Income2").value);
     let year1Ownership = Number(document.getElementById("Ownership1").value); 
@@ -147,8 +146,7 @@ function calculatePartnership() {
 }
 
 function calculateSCorp() {
-    let liquiditySelect = document.getElementById("scorpLiquiditySelect");
-    let liquidityValue = liquiditySelect.value;
+    let liquidityValue = document.getElementById("scorpLiquiditySelect").value;
     let year1W2Income = Number(document.getElementById("SCorpW2Income1").value); 
     let year2W2Income = Number(document.getElementById("SCorpW2Income2").value);
     let year1Ownership = Number(document.getElementById("SCorpOwnership1").value); 
@@ -235,8 +233,7 @@ function calculateCorp() {
 }
 
 function calculateRental() {
-    let escrowedSelect = document.getElementById("rentalEscrowedSelect");
-    let escrowedValue = escrowedSelect.value;
+    let escrowedValue = document.getElementById("rentalEscrowedSelect").value;
     let mortgage = Number(document.getElementById("TotalMortgage").value);
     let rents = Number(document.getElementById("TotalRents").value);
     let insurance = Number(document.getElementById("Insurance").value);
@@ -253,6 +250,25 @@ function calculateRental() {
         monthlyIncome = ((rents - insurance - interest - depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
     }
     document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
+}
+
+function calculateSSI() {
+    let ssiType = document.getElementById("ssiTypeSelect").value;
+    let grossPay = Number(document.getElementById("GrossPay").value);
+    let ssi6b = Number(document.getElementById("6B").value);
+
+    let FHA = 0;
+    let VA = 0;
+    if (ssiType === "Form1099") {
+        FHA = (((grossPay - ssi6b) * 0.15) / 12 )+ (grossPay / 12);
+        VA = ((grossPay - ssi6b) * 0.25) / 12 + (grossPay / 12);
+    } else {
+        FHA = ((grossPay * 12) - ssi6b) * (0.15 / 12) + grossPay;
+        VA = (((grossPay * 12) - ssi6b) * 0.25) / 12 + grossPay;
+    }
+
+    document.getElementById("FHAmonthlyIncome").textContent = "$" + FHA.toFixed(2);
+    document.getElementById("VAmonthlyIncome").textContent = "$" + VA.toFixed(2);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
