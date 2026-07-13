@@ -233,6 +233,9 @@ function calculateCorp() {
     document.getElementById("CorpmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
     document.getElementById("Corpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
 }
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".years-select").forEach(select => {
