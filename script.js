@@ -105,8 +105,8 @@ function calculatePartnership() {
     let year2K1Income = Number(document.getElementById("K1Income2").value);
     let year1Distributions = Number(document.getElementById("Distributions1").value); //4
     let year2Distributions = Number(document.getElementById("Distributions2").value);
-    let year1GuaranteedPayments = Number(document.getElementById("Guaranteed1").value); //5
-    let year2GuaranteedPayments = Number(document.getElementById("Guaranteed2").value);
+    let year1GuaranteedPayments = Number(document.getElementById("Guarantee1").value); //5
+    let year2GuaranteedPayments = Number(document.getElementById("Guarantee2").value);
     let year1OtherIncome = Number(document.getElementById("OtherIncome1").value); //6
     let year2OtherIncome = Number(document.getElementById("OtherIncome2").value);
     let year1Nonrecurring = Number(document.getElementById("Nonrecurring1").value); //7
