@@ -247,7 +247,7 @@ function calculateRental() {
     if (escrowedValue === "Yes") {
         monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
     } else {
-        monthlyIncome = ((rents - insurance - interest - depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
+        monthlyIncome = ((rents - insurance - interest + depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
     }
     document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
 }
