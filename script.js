@@ -238,16 +238,17 @@ function calculateRental() {
     let rents = Number(document.getElementById("TotalRents").value);
     let insurance = Number(document.getElementById("Insurance").value);
     let interest = Number(document.getElementById("Interest").value);
+    let taxes = Number(document.getElementById("Taxes").value);
     let depreciation = Number(document.getElementById("Depreciation").value);
     let HOA = Number(document.getElementById("HOA").value);
     let onetimeexpense = Number(document.getElementById("Extraordinary").value);
     let expenses = Number(document.getElementById("Expenses").value);
     
-    let monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
+    let monthlyIncome = ((rents + insurance + interest + taxes + depreciation + HOA + onetimeexpense - expenses) / 12);
     if (escrowedValue === "Yes") {
-        monthlyIncome = ((rents + insurance + interest + depreciation + HOA + onetimeexpense - expenses) / 12) - mortgage;
+        monthlyIncome = monthlyIncome - mortgage;
     } else {
-        monthlyIncome = ((rents - insurance - interest + depreciation - HOA - onetimeexpense - expenses) / 12) - (mortgage + (insurance/12) + (depreciation/12));
+        monthlyIncome = monthlyIncome - (mortgage + (insurance/12) + (taxes/12));
     }
     document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
 }
