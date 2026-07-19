@@ -189,9 +189,9 @@ function calculateSCorp() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("SCorpmonthlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
-    document.getElementById("SCorpmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
-    document.getElementById("SCorpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
+    document.getElementById("SCorpmonthlyIncome1").textContent = formatCurrency(monthlyIncome1);
+    document.getElementById("SCorpmonthlyIncome2").textContent = formatCurrency(monthlyIncome2);
+    document.getElementById("SCorpaverage24Months").textContent = formatCurrency(averageMonthlyIncome);
 }
 
 function calculateCorp() {
@@ -227,9 +227,9 @@ function calculateCorp() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("CorpmonthlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
-    document.getElementById("CorpmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
-    document.getElementById("Corpaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
+    document.getElementById("CorpmonthlyIncome1").textContent = formatCurrency(monthlyIncome1);
+    document.getElementById("CorpmonthlyIncome2").textContent = formatCurrency(monthlyIncome2);
+    document.getElementById("Corpaverage24Months").textContent = formatCurrency(averageMonthlyIncome);
 }
 
 function calculateRental() {
@@ -250,7 +250,7 @@ function calculateRental() {
     } else {
         monthlyIncome = monthlyIncome - (mortgage + (insurance/12) + (taxes/12));
     }
-    document.getElementById("RentalmonthlyIncome").textContent = "$" + monthlyIncome.toFixed(2);
+    document.getElementById("RentalmonthlyIncome").textContent = formatCurrency(monthlyIncome);
 }
 
 function calculateSSI() {
@@ -268,8 +268,8 @@ function calculateSSI() {
         VA = (((grossPay * 12) - ssi6b) * 0.25) / 12 + grossPay;
     }
 
-    document.getElementById("FHAmonthlyIncome").textContent = "$" + FHA.toFixed(2);
-    document.getElementById("VAmonthlyIncome").textContent = "$" + VA.toFixed(2);
+    document.getElementById("FHAmonthlyIncome").textContent = formatCurrency(FHA);
+    document.getElementById("VAmonthlyIncome").textContent = formatCurrency(VA);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
