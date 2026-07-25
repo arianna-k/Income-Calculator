@@ -6,6 +6,11 @@ window.addEventListener('load', function() {
     }
 });
 
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+
 function openTab(event, tabId) {
 
     // Hide all content
@@ -87,9 +92,9 @@ function calculateScheduleC() {
     console.log("Year 2 Total: " + year2total);
     console.log("Annual Average: " + annualAverage);
 
-    document.getElementById("ScheduleCmonthlyIncome1").textContent = "$" + year1total.toFixed(2);
-    document.getElementById("ScheduleCmonthlyIncome2").textContent = "$" + year2total.toFixed(2);
-    document.getElementById("ScheduleCaverage24Months").textContent = "$" + annualAverage.toFixed(2);
+    document.getElementById("ScheduleCmonthlyIncome1").textContent = "$" + currencyFormatter.format(year1total);
+    document.getElementById("ScheduleCmonthlyIncome2").textContent = "$" + currencyFormatter.format(year2total);
+    document.getElementById("ScheduleCaverage24Months").textContent = "$" + currencyFormatter.format(annualAverage);
 }
 
 function calculatePartnership() {
@@ -140,9 +145,9 @@ function calculatePartnership() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("PartnershipmonthlyIncome1").textContent = "$" + monthlyIncome1.toFixed(2);
-    document.getElementById("PartnershipmonthlyIncome2").textContent = "$" + monthlyIncome2.toFixed(2);
-    document.getElementById("Partnershipaverage24Months").textContent = "$" + averageMonthlyIncome.toFixed(2);
+    document.getElementById("PartnershipmonthlyIncome1").textContent = "$" + currencyFormatter.format(monthlyIncome1);
+    document.getElementById("PartnershipmonthlyIncome2").textContent = "$" + currencyFormatter.format(monthlyIncome2);
+    document.getElementById("Partnershipaverage24Months").textContent = "$" + currencyFormatter.format(averageMonthlyIncome);
 }
 
 function calculateSCorp() {
@@ -189,9 +194,9 @@ function calculateSCorp() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("SCorpmonthlyIncome1").textContent = formatCurrency(monthlyIncome1);
-    document.getElementById("SCorpmonthlyIncome2").textContent = formatCurrency(monthlyIncome2);
-    document.getElementById("SCorpaverage24Months").textContent = formatCurrency(averageMonthlyIncome);
+    document.getElementById("SCorpmonthlyIncome1").textContent = currencyFormatter.format(monthlyIncome1);
+    document.getElementById("SCorpmonthlyIncome2").textContent = currencyFormatter.format(monthlyIncome2);
+    document.getElementById("SCorpaverage24Months").textContent = currencyFormatter.format(averageMonthlyIncome);
 }
 
 function calculateCorp() {
@@ -227,9 +232,9 @@ function calculateCorp() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("CorpmonthlyIncome1").textContent = formatCurrency(monthlyIncome1);
-    document.getElementById("CorpmonthlyIncome2").textContent = formatCurrency(monthlyIncome2);
-    document.getElementById("Corpaverage24Months").textContent = formatCurrency(averageMonthlyIncome);
+    document.getElementById("CorpmonthlyIncome1").textContent = currencyFormatter.format(monthlyIncome1);
+    document.getElementById("CorpmonthlyIncome2").textContent = currencyFormatter.format(monthlyIncome2);
+    document.getElementById("Corpaverage24Months").textContent = currencyFormatter.format(averageMonthlyIncome);
 }
 
 function calculateRental() {
@@ -268,8 +273,8 @@ function calculateSSI() {
         VA = (((grossPay * 12) - ssi6b) * 0.25) / 12 + grossPay;
     }
 
-    document.getElementById("FHAmonthlyIncome").textContent = formatCurrency(FHA);
-    document.getElementById("VAmonthlyIncome").textContent = formatCurrency(VA);
+    document.getElementById("FHAmonthlyIncome").textContent = currencyFormatter.format(FHA);
+    document.getElementById("VAmonthlyIncome").textContent = currencyFormatter.format(VA);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

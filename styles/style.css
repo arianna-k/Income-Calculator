@@ -182,7 +182,7 @@ p {
 }
 
 .date-picker-label {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 600;
     color: #333;
     margin-bottom: 8px;
@@ -277,3 +277,86 @@ p {
     font-weight: bold;
 }
 
+/* Variable Table */
+.variable-income-table-container{
+    overflow-x:auto;
+    margin-top:30px;
+}
+
+.variable-income-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#FFFFFF;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.variable-income-table th{
+
+    background:#FAF4F2;
+    color:#333;
+
+    font-size:15px;
+    font-weight:600;
+
+    padding:18px;
+
+    text-align:center;
+
+    border-bottom:2px solid #E38512;
+
+}
+
+.variable-income-table td{
+
+    padding:14px;
+
+    border-bottom:1px solid #ECECEC;
+
+}
+
+.income-input,
+.income-source{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #D9D9D9;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.income-input:focus,
+.income-source:focus{
+
+    outline:none;
+
+    border-color:#E38512;
+
+    box-shadow:0 0 0 4px rgba(227,133,18,.15);
+
+}
+
+.monthly-income{
+
+    font-weight:700;
+
+    text-align:center;
+
+    color:#E38512;
+
+}
+
+.income-change{
+
+    font-weight:600;
+
+    text-align:center;
+
+}
