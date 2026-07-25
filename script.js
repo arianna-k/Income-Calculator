@@ -92,9 +92,9 @@ function calculateScheduleC() {
     console.log("Year 2 Total: " + year2total);
     console.log("Annual Average: " + annualAverage);
 
-    document.getElementById("ScheduleCmonthlyIncome1").textContent = "$" + currencyFormatter.format(year1total);
-    document.getElementById("ScheduleCmonthlyIncome2").textContent = "$" + currencyFormatter.format(year2total);
-    document.getElementById("ScheduleCaverage24Months").textContent = "$" + currencyFormatter.format(annualAverage);
+    document.getElementById("ScheduleCmonthlyIncome1").textContent = currencyFormatter.format(year1total);
+    document.getElementById("ScheduleCmonthlyIncome2").textContent = currencyFormatter.format(year2total);
+    document.getElementById("ScheduleCaverage24Months").textContent = currencyFormatter.format(annualAverage);
 }
 
 function calculatePartnership() {
@@ -145,9 +145,9 @@ function calculatePartnership() {
 
     let averageMonthlyIncome = (monthlyIncome1 + monthlyIncome2) / 2;
 
-    document.getElementById("PartnershipmonthlyIncome1").textContent = "$" + currencyFormatter.format(monthlyIncome1);
-    document.getElementById("PartnershipmonthlyIncome2").textContent = "$" + currencyFormatter.format(monthlyIncome2);
-    document.getElementById("Partnershipaverage24Months").textContent = "$" + currencyFormatter.format(averageMonthlyIncome);
+    document.getElementById("PartnershipmonthlyIncome1").textContent = currencyFormatter.format(monthlyIncome1);
+    document.getElementById("PartnershipmonthlyIncome2").textContent = currencyFormatter.format(monthlyIncome2);
+    document.getElementById("Partnershipaverage24Months").textContent = currencyFormatter.format(averageMonthlyIncome);
 }
 
 function calculateSCorp() {

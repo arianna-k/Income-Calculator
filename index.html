@@ -1184,18 +1184,39 @@
         <div id="variable" class="tab-content">
             <div class="calculator-card">
 
-                <div class="date-picker-container">
-                    <label for="datePicker" class="date-picker-label">
-                        Pay Stub End Date
-                    </label>
+                <div class="calculator-columns" id="calculatorColumns">
+                    
+                    <div class="calculator-column year1Column" id="year1Column">
 
-                    <input
-                        type="date"
-                        id="datePicker"
-                        class="date-picker"
-                    >
-                </div>
+                        <div class="date-picker-container">
+                            <label for="datePicker" class="date-picker-label">
+                                Start of Employment Date:
+                            </label>
 
+                            <input
+                                type="date"
+                                id="datePicker"
+                                class="date-picker"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="calculator-column year2Column" id="year2Column">
+
+                        <div class="date-picker-container">
+                            <label for="datePicker" class="date-picker-label">
+                                Payment Date of Most Recent Paystub:
+                            </label>
+
+                            <input
+                                type="date"
+                                id="datePicker"
+                                class="date-picker"
+                            >
+                        </div>
+                    </div>
+                </div>  
+                
                 <div class="variable-income-table-container">
 
                     <table class="variable-income-table">
