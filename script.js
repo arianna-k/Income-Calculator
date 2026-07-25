@@ -11,6 +11,18 @@ const currencyFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD'
 });
 
+const addButton = document.getElementById("addIncomeSource");
+const tbody = document.querySelector(".variable-income-table tbody");
+const template = document.getElementById("incomeRowTemplate");
+
+addButton.addEventListener("click", () => {
+
+    const newRow = template.content.cloneNode(true);
+
+    tbody.appendChild(newRow);
+
+});
+
 function openTab(event, tabId) {
 
     // Hide all content

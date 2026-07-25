@@ -1216,7 +1216,7 @@
                         </div>
                     </div>
                 </div>  
-                
+
                 <div class="variable-income-table-container">
 
                     <table class="variable-income-table">
@@ -1232,7 +1232,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody id ="incomeTableBody">
 
                             <tr>
 
@@ -1279,9 +1279,54 @@
                             </tr>
 
                         </tbody>
-
                     </table>
+                    
+                    <template id="incomeRowTemplate">
+                        <tr>
 
+                            <td>
+                                <input
+                                    type="text"
+                                    class="income-source"
+                                    placeholder="Income Source">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="income-input"
+                                    placeholder="$0.00">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="income-input"
+                                    placeholder="$0.00">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="income-input"
+                                    placeholder="$0.00">
+                            </td>
+
+                            <td class="monthly-income">
+                                $0.00
+                            </td>
+
+                            <td class="income-change">
+                                —
+                            </td>
+
+                        </tr>
+                    </template>
+                </div>
+                <div class="table-actions">
+                    <button type="button" id="addIncomeSource" class="add-income-btn">
+                        + Add Income Source
+                    </button>
                 </div>
             </div>
         </div>
