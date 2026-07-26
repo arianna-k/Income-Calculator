@@ -296,3 +296,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+incomeInput.addEventListener("input", function () {
+    const row = this.closest("tr");
+    calculateRow(row);
+});
+
+function calculateDateDiff() {
+    const startDate = new Date(document.getElementById("StartDate").value);
+    const endDate = new Date(document.getElementById("EndDate").value);
+    const today = new Date();
+    const yearsAgo = new Date(today.getFullYear() - 2);
+    
+    if (startDate.getFullYear() < yearsAgo.getFullYear()) {
+        startDate = new Date(new Date().getFullYear() - 2, 0, 1);
+        const daydiff = (endDate - startDate) / 86_400_000;
+        const monthsdiff = (daysdiff / 365) * 12;
+
+    }
+    else {
+        const daydiff = (endDate - startDate) / 86_400_000;
+        const monthsdiff = (daysdiff / 365) * 12;
+    }
+
+    return monthsdiff
+};
+
+function calculateRow(row) {
+    const months = calculateDateDiff()
+    const twoYearsAgo = row.querySelector(".two-years-ago");
+    const lastYear = row.querySelector(".last-year");
+    const ytd = row.querySelector(".ytd-income");
+
+    const monthlyaverage = (twoYearsAgo + lastYear + ytd) / months
+
+    let change = ""
+    if (twoYearsAgo > 0 && lastYear > 0) {
+
+        const percent = ((lastYear - twoYearsAgo) / twoYearsAgo) * 100;
+
+        if (percent > 0) {
+            change = `↑ ${percent.toFixed(1)}%`;
+        } else if (percent < 0) {
+            change = `↓ ${Math.abs(percent).toFixed(1)}%`;
+        } else {
+            change = "—";
+        }
+    } else {
+        change = "—";
+    }
+
+    row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
+
+    // Update Change %
+    row.querySelector(".change-percent").textContent = change;
+}
+
