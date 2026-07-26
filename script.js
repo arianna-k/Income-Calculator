@@ -318,12 +318,12 @@ function calculateDateDiff() {
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
         startDate = new Date(new Date().getFullYear() - 2, 0, 1);
         const daydiff = (endDate - startDate) / 86_400_000;
-        const monthsdiff = (daysdiff / 365) * 12;
+        const monthsdiff = (daydiff / 365) * 12;
 
     }
     else {
         const daydiff = (endDate - startDate) / 86_400_000;
-        const monthsdiff = (daysdiff / 365) * 12;
+        const monthsdiff = (daydiff / 365) * 12;
     }
 
     return monthsdiff
