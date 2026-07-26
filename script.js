@@ -358,6 +358,6 @@ function calculateRow(row) {
     console.log(change)
     
     row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
-    row.querySelector(".change-percent").textContent = change;
+    row.querySelector(".income-change").textContent = change;
 }
 
