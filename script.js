@@ -314,7 +314,7 @@ function calculateDateDiff() {
     const endDate = new Date(document.getElementById("EndDate").value);
     const today = new Date();
     const yearsAgo = new Date(today.getFullYear() - 2);
-    
+
     let monthsdiff = 0
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
         startDate = new Date(new Date().getFullYear() - 2, 0, 1);
@@ -326,7 +326,7 @@ function calculateDateDiff() {
         const daydiff = (endDate - startDate) / 86_400_000;
         const monthsdiff = (daydiff / 365) * 12;
     }
-
+    console.log(monthsdiff)
     return monthsdiff
 };
 
@@ -337,7 +337,9 @@ function calculateRow(row) {
     const ytd = row.querySelector(".ytd-income");
 
     const monthlyaverage = (twoYearsAgo + lastYear + ytd) / months
-
+    console.log(twoYearsAgo)
+    console.log(months)
+    console.log(monthlyaverage)
     let change = ""
     if (twoYearsAgo > 0 && lastYear > 0) {
 
@@ -353,7 +355,8 @@ function calculateRow(row) {
     } else {
         change = "—";
     }
-
+    console.log(change)
+    
     row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
     row.querySelector(".change-percent").textContent = change;
 }
