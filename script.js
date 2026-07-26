@@ -297,9 +297,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-incomeInput.addEventListener("input", function () {
-    const row = this.closest("tr");
+
+const tableBody = document.getElementById("incomeTableBody");
+
+tableBody.addEventListener("input", function (event) {
+    if (!event.target.classList.contains("income-input")) {
+        return;
+    }
+    const row = event.target.closest("tr");
     calculateRow(row);
+
 });
 
 function calculateDateDiff() {
