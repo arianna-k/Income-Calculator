@@ -315,6 +315,7 @@ function calculateDateDiff() {
     const today = new Date();
     const yearsAgo = new Date(today.getFullYear() - 2);
     
+    let monthsdiff = 0
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
         startDate = new Date(new Date().getFullYear() - 2, 0, 1);
         const daydiff = (endDate - startDate) / 86_400_000;
@@ -354,8 +355,6 @@ function calculateRow(row) {
     }
 
     row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
-
-    // Update Change %
     row.querySelector(".change-percent").textContent = change;
 }
 
