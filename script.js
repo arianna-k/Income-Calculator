@@ -310,54 +310,101 @@ tableBody.addEventListener("input", function (event) {
 });
 
 function calculateDateDiff() {
-    const startDate = new Date(document.getElementById("StartDate").value);
-    const endDate = new Date(document.getElementById("EndDate").value);
-    const today = new Date();
+    let startDate = new Date(document.getElementById("StartDate").value);
+    let endDate = new Date(document.getElementById("EndDate").value);
+    let today = new Date();
     const yearsAgo = new Date(today.getFullYear() - 2);
 
     let monthsdiff = 0
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
         startDate = new Date(new Date().getFullYear() - 2, 0, 1);
         const daydiff = (endDate - startDate) / 86_400_000;
-        const monthsdiff = (daydiff / 365) * 12;
+        monthsdiff = (daydiff / 365) * 12;
 
     }
     else {
         const daydiff = (endDate - startDate) / 86_400_000;
-        const monthsdiff = (daydiff / 365) * 12;
+        monthsdiff = (daydiff / 365) * 12;
     }
     console.log(monthsdiff)
     return monthsdiff
 };
 
-function calculateRow(row) {
-    const months = calculateDateDiff()
-    const twoYearsAgo = row.querySelector(".two-years-ago");
-    const lastYear = row.querySelector(".last-year");
-    const ytd = row.querySelector(".ytd-income");
+// function calculateRow(row) {
+//     const months = calculateDateDiff()
+//     // const twoYearsAgo = row.querySelector(".two-years-ago");
+//     // const lastYear = row.querySelector(".last-year");
+//     // const ytd = row.querySelector(".ytd-income");
 
-    const monthlyaverage = (twoYearsAgo + lastYear + ytd) / months
-    console.log(twoYearsAgo)
-    console.log(months)
-    console.log(monthlyaverage)
-    let change = ""
+//     const inputs = row.querySelectorAll(".income-input");
+//     const twoYearsAgo = Number(inputs[0].value) || 0;
+//     const lastYear = Number(inputs[1].value) || 0;
+//     const ytd = Number(inputs[2].value) || 0;
+
+//     const monthlyaverage = (twoYearsAgo + lastYear + ytd) / months
+//     console.log(twoYearsAgo)
+//     console.log(months)
+//     console.log(monthlyaverage)
+//     let change = ""
+//     if (twoYearsAgo > 0 && lastYear > 0) {
+
+//         const percent = ((lastYear - twoYearsAgo) / twoYearsAgo) * 100;
+
+//         if (percent > 0) {
+//             change = `↑ ${percent.toFixed(1)}%`;
+//         } else if (percent < 0) {
+//             change = `↓ ${Math.abs(percent).toFixed(1)}%`;
+//         } else {
+//             change = "—";
+//         }
+//     } else {
+//         change = "—";
+//     }
+//     console.log(change)
+    
+//     row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
+//     row.querySelector(".income-change").textContent = change;
+// }
+
+function calculateRow(row) {
+
+    const months = calculateDateDiff();
+
+    const inputs = row.querySelectorAll(".income-input");
+
+    const twoYearsAgo = Number(inputs[0].value) || 0;
+    const lastYear = Number(inputs[1].value) || 0;
+    const ytd = Number(inputs[2].value) || 0;
+
+    console.log({
+        months,
+        twoYearsAgo,
+        lastYear,
+        ytd
+    });
+
+    const monthlyaverage =
+        months > 0
+            ? (twoYearsAgo + lastYear + ytd) / months
+            : 0;
+
+    let change = "—";
+
     if (twoYearsAgo > 0 && lastYear > 0) {
 
-        const percent = ((lastYear - twoYearsAgo) / twoYearsAgo) * 100;
+        const percent =
+            ((lastYear - twoYearsAgo) / twoYearsAgo) * 100;
 
         if (percent > 0) {
             change = `↑ ${percent.toFixed(1)}%`;
         } else if (percent < 0) {
             change = `↓ ${Math.abs(percent).toFixed(1)}%`;
-        } else {
-            change = "—";
         }
-    } else {
-        change = "—";
+
     }
-    console.log(change)
-    
-    row.querySelector(".monthly-income").textContent = currencyFormatter.format(monthlyaverage);
+
+    row.querySelector(".monthly-income").textContent =
+        currencyFormatter.format(monthlyaverage);
+
     row.querySelector(".income-change").textContent = change;
 }
-
