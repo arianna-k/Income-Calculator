@@ -310,42 +310,41 @@ tableBody.addEventListener("input", function (event) {
 });
 
 function calculateDateDiff() {
-    const startInput = document.getElementById("StartDate");
-    const endInput = document.getElementById("EndDate");
+    let startDate = new Date(document.getElementById("StartDate").value);
+    let endDate = new Date(document.getElementById("EndDate").value);
 
-    console.log("Start input:", startInput);
-    console.log("End input:", endInput);
+    let today = new Date();
+    const yearsAgo = new Date(today.getFullYear() - 2);
 
-    console.log("Start value:", startInput.value);
-    console.log("End value:", endInput.value);
+    console.log("startDate:", startDate);
+    console.log("endDate:", endDate);
+    console.log("yearsAgo:", yearsAgo);
 
-    let startDate = new Date(startInput.value);
-    let endDate = new Date(endInput.value);
+    let monthsdiff = 0;
 
-    console.log("Start date:", startDate);
-    console.log("End date:", endDate);
-
-
-    const yearsAgo = new Date(
-        today.getFullYear() - 2,
-        today.getMonth(),
-        today.getDate()
-    );
-
-    let monthsdiff = 0
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
+
         startDate = new Date(new Date().getFullYear() - 2, 0, 1);
-        const daydiff = (endDate - startDate) / 86_400_000;
+
+        console.log("Adjusted start:", startDate);
+
+        const daydiff = (endDate - startDate) / 86400000;
+        console.log("daydiff:", daydiff);
+
         monthsdiff = (daydiff / 365) * 12;
 
-    }
-    else {
-        const daydiff = (endDate - startDate) / 86_400_000;
+    } else {
+
+        const daydiff = (endDate - startDate) / 86400000;
+        console.log("daydiff:", daydiff);
+
         monthsdiff = (daydiff / 365) * 12;
     }
-    console.log(monthsdiff)
-    return monthsdiff
-};
+
+    console.log("monthsdiff:", monthsdiff);
+
+    return monthsdiff;
+}
 
 // function calculateRow(row) {
 //     const months = calculateDateDiff()
