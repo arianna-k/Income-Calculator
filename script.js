@@ -310,10 +310,19 @@ tableBody.addEventListener("input", function (event) {
 });
 
 function calculateDateDiff() {
+    console.log(startDate);
+    console.log(endDate);
+    console.log(startDate.getTime());
+    console.log(endDate.getTime());
     let startDate = new Date(document.getElementById("StartDate").value);
-    let endDate = new Date(document.getElementById("EndDate").value);
-    let today = new Date();
-    const yearsAgo = new Date(today.getFullYear() - 2);
+    const endDate = new Date(document.getElementById("EndDate").value);
+    const today = new Date();
+
+    const yearsAgo = new Date(
+        today.getFullYear() - 2,
+        today.getMonth(),
+        today.getDate()
+    );
 
     let monthsdiff = 0
     if (startDate.getFullYear() < yearsAgo.getFullYear()) {
