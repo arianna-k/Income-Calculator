@@ -310,14 +310,21 @@ tableBody.addEventListener("input", function (event) {
 });
 
 function calculateDateDiff() {
-    let startDate = new Date(document.getElementById("StartDate").value);
-    const endDate = new Date(document.getElementById("EndDate").value);
-    const today = new Date();
+    const startInput = document.getElementById("StartDate");
+    const endInput = document.getElementById("EndDate");
 
-    console.log(startDate);
-    console.log(endDate);
-    console.log(startDate.getTime());
-    console.log(endDate.getTime());
+    console.log("Start input:", startInput);
+    console.log("End input:", endInput);
+
+    console.log("Start value:", startInput.value);
+    console.log("End value:", endInput.value);
+
+    let startDate = new Date(startInput.value);
+    let endDate = new Date(endInput.value);
+
+    console.log("Start date:", startDate);
+    console.log("End date:", endDate);
+
 
     const yearsAgo = new Date(
         today.getFullYear() - 2,
