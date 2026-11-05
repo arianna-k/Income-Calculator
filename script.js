@@ -267,7 +267,7 @@ function calculateRental() {
     } else {
         monthlyIncome = monthlyIncome - (mortgage + (insurance/12) + (taxes/12));
     }
-    document.getElementById("RentalmonthlyIncome").textContent = formatCurrency(monthlyIncome);
+    document.getElementById("RentalmonthlyIncome").textContent = currencyFormatter.format(monthlyIncome);
 }
 
 function calculateSSI() {
